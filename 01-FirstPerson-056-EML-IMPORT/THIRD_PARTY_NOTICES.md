@@ -1,0 +1,1 @@
+Derived from Dr-hydra/Endfield-Mod-Loader first-person example, commit 113405816cf8f7628e03dfe68d7f6ea6866ccf9a. AGPL-3.0-only; modifications and complete native source included. nlohmann/json (MIT) and EML ABI headers are supplied with the paired VR source vendor directory. See the total bundle source/eml-ui-routing-056/THIRD_PARTY_NOTICES.md.

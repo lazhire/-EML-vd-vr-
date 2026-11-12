@@ -1,0 +1,18 @@
+{
+  "LICENSE": "e9df4c4e4e64b8168a71c3c67668dcffabbe8fca11d4ac4a7d5482562cd1679c",
+  "README.md": "5dca7b921651881db8445065009e9368c179ceca885717aae275d0e9fc44f1ca",
+  "THIRD_PARTY_NOTICES.md": "fd11b8045ff10e1b4a29e2bd29cd0293ac7202bfb44f3520b96f34cf2a6613aa",
+  "module.json": "ed85a4e7b29059ddfe27af5e3fddac947dc4373510dd73173341b1d9dfe43dc2",
+  "native/windows-x64/example.first-person.dll": "7d173abef6c6dab563fe541bf15829a37682eaf342dcc52bf89a2e260f972207",
+  "source/native/camera_runtime.inc": "e7f59c4564f8dabe5355234e284a355d0529dd2086eed7c264b3dc092c4dc223",
+  "source/native/first_person_mesh.h": "13833bd06ff89dd935dbd7eafe6c68f794abf4af67edc0e63cee924a26c25c8e",
+  "source/native/first_person_profiles.generated.inc": "c5e6558ef0b37c9d3f27f684665b77a4dae501f4b342f0de94c51c3ec077daf8",
+  "source/native/first_person_profiles.h": "a24a088e1ec7d50803701b165d752131205d846b4e3d9f509f7764d817314290",
+  "source/native/first_person_retry.h": "31b6253d4c618350357d78e6d8200f9cfad6b96f499f9ba0454a8b5e4f775004",
+  "source/native/first_person_runtime.inc": "90a5383f5ab58818694cd3cc72f305cc0bca5d356639fb5d4227866504c3862d",
+  "source/native/module.cpp": "28cdad4da985e0c5aa9f153c258aaf8b8787c509dc713c5b97da67ce53dad5c1",
+  "source/native/platform.h": "c3a260526d03a5969644c518382380beed5d8ffea89b0b4517834751e50b098c",
+  "source/native/vr_ui_pause.h": "d5124d85d8c858182740405b9beb75578902e15c52dd0f121e3d454080d0d762",
+  "ui/app.js": "aa975980206d286398de7bd16a37cccdeabf24df770f76eee83213ecfbc072bd",
+  "ui/index.html": "47f626eace724c6594db9886be9e5a097be0954f2d2f6b1b8253e834afe473d6"
+}

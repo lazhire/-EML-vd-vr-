@@ -1,0 +1,25 @@
+{
+  "format": 1,
+  "id": "example.first-person",
+  "name": "第一人称 · VR 界面暂停适配",
+  "author": "Endfield Mod Loader / Better Endfield contributors",
+  "version": "0.1.0-vr-ui-guard-056",
+  "abi": 1,
+  "libraries": {
+    "windows-x64": "native/windows-x64/example.first-person.dll"
+  },
+  "ui": "ui/index.html",
+  "default_configuration": {
+    "enabled": true,
+    "active": false,
+    "hide_head": true,
+    "fill_neck": true,
+    "fov": 75,
+    "neck_range": 1,
+    "look_limit": 90,
+    "turn_speed": 360,
+    "toggle_key": 189,
+    "diagnostics": false
+  },
+  "dependencies": []
+}
