@@ -1,0 +1,209 @@
+{
+  "result": "PASS",
+  "version": "0.6.9-smooth-popup",
+  "utc": "2026-11-12T14:39:29.172448+00:00",
+  "library_sha256": "5817252820df34785adfb215dfed9efd97e86c742c3d5026bbf3ef84fcd533bd",
+  "first_person_sha256": "7d173abef6c6dab563fe541bf15829a37682eaf342dcc52bf89a2e260f972207",
+  "checks": [
+    {
+      "name": "VR build",
+      "result": "PASS",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/build.py",
+        "--zig",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\toolchain\\ziglang\\zig.exe",
+        "--scratch",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\eml-vrvd-build-elevated"
+      ],
+      "output": "Built: C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\outputs\\endfield-vr\\eml-smooth-popup-069\\native\\windows-x64\\quest3.vrvd.dll\nBuilt: C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\outputs\\endfield-vr\\eml-smooth-popup-069\\native\\windows-x64\\vrvd-xr-probe.exe\nBuilt: C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\outputs\\endfield-vr\\eml-smooth-popup-069\\native\\windows-x64\\vrvd-vulkan-probe.exe"
+    },
+    {
+      "name": "First-person build",
+      "result": "PASS",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/build_pair.py",
+        "--zig",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\toolchain\\ziglang\\zig.exe",
+        "--scratch",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\eml-vrvd-build-elevated"
+      ],
+      "output": "Built paired first-person guard: C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\outputs\\endfield-vr\\first-person-ui-guard-056\\native\\windows-x64\\example.first-person.dll"
+    },
+    {
+      "name": "production independent menu pump",
+      "result": "PASS",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/test_menu_pump.py",
+        "--zig",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\toolchain\\ziglang\\zig.exe",
+        "--scratch",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\eml-vrvd-build-elevated"
+      ],
+      "output": "PASS: production clock pumps without camera/tail, paused time untouched, owner thread, reentry/unload gates; 50 page/panel changes retain completed images and readback scheduling; source invalidation; actual readable GDI wait panel; no game/XR"
+    },
+    {
+      "name": "native UI contracts",
+      "result": "PASS",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/test_ui_transition.py",
+        "--zig",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\toolchain\\ziglang\\zig.exe",
+        "--scratch",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\eml-vrvd-build-elevated"
+      ],
+      "output": "PASS: 18 observed activity/map/shop/domain panel sets route flat; passive activity/map HUD stays gameplay\nPASS: 5 real host-log gameplay panel sets restore gate=1; future passive panels safe; known menus/loading/dialogue pause; radial retains first-person; resume intent consumed once\nPASS: 300 ms two-sided smooth transition, submitted black barriers, delayed content, nested menus, continuous reversal, zero duration\nPASS: FinalResult enum/ownership, persistent registration, seed rejection, frame delay, orientation/aspect, source selection, active RT restoration, registration failure retry and detach; fake managed API only\nPASS: EML string destination, null-controller system menu, independent panel enumeration, sticky menu pause, confirmed gameplay resume; fake host\nPASS: gameplay/menu/nested/unknown/world UI/loading/special camera routing and generation identity\nPASS: native extraction identity, generation discard, readback orientation/aspect, original RT restoration and cleanup retry; fake managed API only\nPASS: first-person intent survives menus, explicit exit/disable wins, toggle is consumed once, resume is not duplicated\nPASS: opaque HUD edge crops retain source RGB; center has zero premultiplied RGBA; invalid buffer rejected"
+    },
+    {
+      "name": "native overlay rendering and restore",
+      "result": "PASS",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/test_menu_overlay.py",
+        "--zig",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\toolchain\\ziglang\\zig.exe",
+        "--scratch",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\eml-vrvd-build-elevated"
+      ],
+      "output": "PASS: original UI camera only, transparency/orientation/aspect, no Canvas bindings, managed/C++ failures, restore retry, allocation retry; fake host only\nHG UI helper offline tests passed (86 checks); no game/runtime/GPU"
+    },
+    {
+      "name": "menu focus pixels",
+      "result": "PASS",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/test_menu_focus.py",
+        "--zig",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\toolchain\\ziglang\\zig.exe",
+        "--scratch",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\eml-vrvd-build-elevated"
+      ],
+      "output": "PASS: clear interior, feathered premultiplied edges, separable Gaussian symmetry, brightness, letterbox exclusion, invalidation; synthetic 640x360 mean 2.04355 ms (not game performance)"
+    },
+    {
+      "name": "OpenXR menu-only and HUD submission",
+      "result": "PASS",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/test_vulkan_hud.py",
+        "--zig",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\toolchain\\ziglang\\zig.exe",
+        "--scratch",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\eml-vrvd-build-elevated"
+      ],
+      "output": "PASS 20 HUD parameter checks and 31 production VIEW/quad checks; fake XR/GPU only, no runtime or game."
+    },
+    {
+      "name": "stereo projection regression",
+      "result": "PASS",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/test_stereo_projection.py",
+        "--zig",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\toolchain\\ziglang\\zig.exe",
+        "--scratch",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\work\\eml-vrvd-build-elevated"
+      ],
+      "output": "PASS: UnityBridge geometry/culling, scalar scale, CopyFrom reset, five silent Render overwrite modes, lost texture detection; fake host, not HG draw validation"
+    },
+    {
+      "name": "release ABI",
+      "result": "PASS",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/test_release_056.py"
+      ],
+      "output": "PASS: release ABI x3, paired guard export, overlay config migration and disable, invalid config atomicity, no-game rejection, no runtime loaded"
+    },
+    {
+      "name": "EML UI",
+      "result": "PASS",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "tools/test_ui_056.js"
+      ],
+      "output": "PASS: EML UI, no auto launch, escaped diagnostics, explicit calibration, preserved connection config, active-session save guard"
+    },
+    {
+      "name": "JS syntax",
+      "result": "PASS",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--check",
+        "ui/app.js"
+      ],
+      "output": ""
+    },
+    {
+      "name": "First-person JS syntax",
+      "result": "PASS",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--check",
+        "C:\\Users\\lazward\\Documents\\Codex\\2026-11-04\\wo-x\\outputs\\endfield-vr\\first-person-ui-guard-056\\ui\\app.js"
+      ],
+      "output": ""
+    }
+  ],
+  "game_launched": false,
+  "eml_launched": false,
+  "vr_session_opened": false,
+  "game_visual_validation": "NOT_RUN",
+  "source_sha256": {
+    "eml-smooth-popup-069/src/desktop_render_filter.cpp": "75607f4c44d0adf92e724937c90a09806d17db5239451650cf0e271679b63623",
+    "eml-smooth-popup-069/src/desktop_render_filter.h": "a73097941fc4ba435c898ab8e5480f48ea64f5615ac85493042b43c64bc10ed1",
+    "eml-smooth-popup-069/src/edge_hud.h": "e9c75e3fa27e0fcf6f2f7de0ab43bed806f04bb4d6152f147d4fe0c37eb173cc",
+    "eml-smooth-popup-069/src/engine_final_capture.h": "f58e6bb2f4d5d9391a3729eb5626c56294aa3b71d1117638c41daaea82401120",
+    "eml-smooth-popup-069/src/eye_labels.h": "a4af06048fc13f471c8b01fe748818d79097aeaaeae009e53c524bc0128c799a",
+    "eml-smooth-popup-069/src/flat_transition.h": "df8ccacc2e2b63c4685ad52cb8e6d4a0f24636c8314c571e7b9a0942ff946725",
+    "eml-smooth-popup-069/src/frame_metrics.h": "c7defba71aac2153518b6cad0f8a92bec17bdc22c045720932fb9aaf455e1213",
+    "eml-smooth-popup-069/src/hg_camera_adapter.cpp": "c045b6783a4fbb6ab4430e89e174b3fae00544feef2d225bf2626b6c75c170a7",
+    "eml-smooth-popup-069/src/hg_camera_adapter.h": "4316b3992f794542273781b845ebaf12289254621e851ed60fd5c111709f13f3",
+    "eml-smooth-popup-069/src/hg_projection_hook.cpp": "2b750ca912760999c34a6c23b4f07d63651fb93590a61b55350619d60e356f1b",
+    "eml-smooth-popup-069/src/hg_projection_hook.h": "9c61e6bbd95f0c104a80a34ab053ecfc4b9b994dfb25dc99f6d6bc19a08bf8a3",
+    "eml-smooth-popup-069/src/hg_ui_camera.cpp": "f97e120ca429167a35f27c91e54702faceba12aceb737afc2270ceb193920f90",
+    "eml-smooth-popup-069/src/hg_ui_camera.h": "77aba8fe034aacf2931212dedad3f1ca05c42dd500c26edecde692adaa88e81f",
+    "eml-smooth-popup-069/src/managed_read.h": "f0e88dd2554df1a89921b6eba1bebb205bb05e5a4a7e62a3b6b91619c03b8ec5",
+    "eml-smooth-popup-069/src/menu_focus.h": "f825b5e271f59d721017f3f685009bbb00c7c911786c54d2c9ec5ce59b8294b3",
+    "eml-smooth-popup-069/src/menu_overlay_pixels.h": "6d0197feb3eed30c69a32f4ea2be4632be62865c190e158815f72679ff81a25e",
+    "eml-smooth-popup-069/src/menu_pump_gate.h": "048368fb4b41a402729078e4cd775c823b6ebfbc991e3652352e05de9a465b60",
+    "eml-smooth-popup-069/src/menu_wait_panel.h": "1e7e014a8d29f7e451bfa5d2d912c6645bae71071999b2d7756f86062706adcf",
+    "eml-smooth-popup-069/src/module.cpp": "cf763a9009c7468f3b53e261b306bbc8d7aa39907ac21bc0a9e8c62606172855",
+    "eml-smooth-popup-069/src/native_menu_capture.h": "e1ff238867e7b53c7338495c4305261142fc08072be2fbb0ab96a443560641e5",
+    "eml-smooth-popup-069/src/native_ui_overlay.h": "816032c7731d175b09b1dbd9a9eba970b44e25cd06a5502d358f17185edfb6fb",
+    "eml-smooth-popup-069/src/openvr_backend.cpp": "a33e3d57e56fcfc200c5ae58b049a36dd0b6ebd4b58efa6d8561a90d1aad6d98",
+    "eml-smooth-popup-069/src/openvr_backend.h": "d85ebe15a915e12a064f5100e72a59ee39d2d8bcbac7918b416430037180dfb0",
+    "eml-smooth-popup-069/src/ui_observer.h": "4b89df81c8bb7a14ebd912fa255a75ce8abd8d13adc4f4e4f0b6e063576d0788",
+    "eml-smooth-popup-069/src/ui_route.h": "8daf227b6e228930cbf76e113837b0502647ab651fc3d2d60e587f9250a5c3a5",
+    "eml-smooth-popup-069/src/unity_bridge.cpp": "3ff5d88d90bc53a1c36849f3d81f2c30baefb5836c2f0ed96d943865f343185b",
+    "eml-smooth-popup-069/src/unity_bridge.h": "0ee4a2c205b375f32b7f200c7069c9000b50a1028b7ffc9d5b9827bdeb71b2cc",
+    "eml-smooth-popup-069/src/unity_gpu_probe.cpp": "1638af0ef1fef3558809d0001bceccc33afe1ed816380bc27c7bc54005e5b2d3",
+    "eml-smooth-popup-069/src/unity_gpu_probe.h": "371ee37566035d9cffb95d25bc3952208cb244e3d8e96a95aac22735260bbc24",
+    "eml-smooth-popup-069/src/unity_hud.cpp": "523a21b0d59844e9a140aaff8eedadc413ca871326382d8b406190492f21898a",
+    "eml-smooth-popup-069/src/unity_hud.h": "7880d4ceddaf53adbfe45844f1b1a790a239ae7a6105882bfb8c22bfb7db2618",
+    "eml-smooth-popup-069/src/window_menu_capture.cpp": "ab35ec74606378ef875838951373c00825ce738e7a5ba7b360ce7ca269b04f34",
+    "eml-smooth-popup-069/src/window_menu_capture.h": "f9678d789cf82daed45b55baa735a5a2ee92d1502fdb35b5f922983aee6d70e6",
+    "eml-smooth-popup-069/src/xr_backend.cpp": "9aa7cf0eb629447f242e85cd702557f8e62924262956f599d23d3d5cbef4b874",
+    "eml-smooth-popup-069/src/xr_backend.h": "3f0d5e4a80c1bed346c28f7990cbc6b9de2a124b08b25b10bc3049aaae409289",
+    "eml-smooth-popup-069/src/xr_probe.cpp": "9f6fee27d3954918259801af11e38042dbbcc6a83969174f3f764fbd6a43ebd8",
+    "eml-smooth-popup-069/src/xr_vulkan.cpp": "3e3401bbbdaeb2c9ed4b62745080f0a97d46f3136b4d6a55ccb342f539827d0b",
+    "eml-smooth-popup-069/src/xr_vulkan.h": "56f54f29647276960f5c935f421e18f2aeb5f3197c42c01254a293a8bfd5f053",
+    "eml-smooth-popup-069/src/xr_vulkan_probe.cpp": "1c305907ecbdde3d20dc4ce1cba7c4611beabe58ad3d4fe5dc0a45afbfce2a20",
+    "eml-smooth-popup-069/ui/app.js": "a80bdd82ef4ac02434c450acd52a5baa6c3da12b0f41ccfeceb361be6f3bc9a6",
+    "eml-smooth-popup-069/ui/index.html": "f79ff0f389c41fceb13822976e5286339bc8bacab54491550c4180a148be2473",
+    "first-person-ui-guard-056/native/camera_runtime.inc": "e7f59c4564f8dabe5355234e284a355d0529dd2086eed7c264b3dc092c4dc223",
+    "first-person-ui-guard-056/native/first_person_mesh.h": "13833bd06ff89dd935dbd7eafe6c68f794abf4af67edc0e63cee924a26c25c8e",
+    "first-person-ui-guard-056/native/first_person_profiles.generated.inc": "c5e6558ef0b37c9d3f27f684665b77a4dae501f4b342f0de94c51c3ec077daf8",
+    "first-person-ui-guard-056/native/first_person_profiles.h": "a24a088e1ec7d50803701b165d752131205d846b4e3d9f509f7764d817314290",
+    "first-person-ui-guard-056/native/first_person_retry.h": "31b6253d4c618350357d78e6d8200f9cfad6b96f499f9ba0454a8b5e4f775004",
+    "first-person-ui-guard-056/native/first_person_runtime.inc": "90a5383f5ab58818694cd3cc72f305cc0bca5d356639fb5d4227866504c3862d",
+    "first-person-ui-guard-056/native/module.cpp": "28cdad4da985e0c5aa9f153c258aaf8b8787c509dc713c5b97da67ce53dad5c1",
+    "first-person-ui-guard-056/native/platform.h": "c3a260526d03a5969644c518382380beed5d8ffea89b0b4517834751e50b098c",
+    "first-person-ui-guard-056/native/vr_ui_pause.h": "d5124d85d8c858182740405b9beb75578902e15c52dd0f121e3d454080d0d762",
+    "first-person-ui-guard-056/ui/app.js": "aa975980206d286398de7bd16a37cccdeabf24df770f76eee83213ecfbc072bd",
+    "first-person-ui-guard-056/ui/index.html": "47f626eace724c6594db9886be9e5a097be0954f2d2f6b1b8253e834afe473d6"
+  }
+}

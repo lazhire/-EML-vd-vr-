@@ -1,0 +1,63 @@
+《终末地》游戏内渲染输出可行性审查
+日期：2026-11-12
+
+结论
+存在明确、可继续实现的游戏内最终画面输出路径。优先目标是让完整菜单继续由游戏渲染，再将结果显示为头部固定的双眼共享面板。
+文件审查支持“有实现基础”，不等于已经打通运行时。纯 GPU 交接、全部菜单覆盖以及帧率均未验证。
+
+审查范围
+只读检查本机安装的 GameAssembly.dll、UnityPlayer.dll、EndfieldBase.dll、global-metadata.dat、boot.config、ScriptingAssemblies.json 和 Plugins 下的 DLL 清单。
+读取 91,478 个类型的索引；针对 HG 渲染程序集、Unity 相关接口及 GPUI 导出 3,215 个类型声明，映射到文件中原生地址的方法条目 13,824 个。共享方法地址不代表独立实现，类型条目数量也不代表菜单数量。
+元数据 SHA-256：461321d9dca6a832bce3bd2390402efc7c83c145554e97a8058bb68fbec1c8ca，与此前保存的声明一致。
+原生审查为选定函数的有界反汇编及控制流追踪，未完整反编译整个游戏或获取运行时 Lua/热更新逻辑。未启动游戏、加载新 DLL、修改游戏文件或发送操作。
+
+一、确认有游戏内部最终纹理提取机制
+1. HGCamera 包含 RegisterRTExtraction、UnRegisterRTExtraction、GetRTForExtraction、GetRTForExtractionCPP 和 extractionDoneCallback。
+2. RTExtractionType 区分 SceneColorLS、BlurredSceneColorPS、SceneColorPS、FinalResult；RTExtractionDuration 区分 Persistent 与 Temporal。
+3. GetScreenCapture 的原生控制流调用 HGCamera.GetOrCreate、读取 finalRTSize、创建目标，并以类型 3、时长 1 调用 RegisterRTExtraction。元数据单字节压缩常量分别解码为 FinalResult=3、Temporal=1。这是登记一次提取请求，不是同步返回已经写好的图片。
+4. 该函数先从所属对象的一个相机字段取得输出尺寸，再从另一个相机字段注册提取。审查观察到两个不同字段读取（+0x100 与 +0x108），未在本轮验证字段语义，不能声称一定对应运行中的完整菜单相机。
+5. ProcessRTExtraction 包含 GetRTForExtraction、RenderGraph.ImportTexture、CopyTexturePass.BlitTexture 及 extractionDoneCallback 访问。这是内部渲染纹理路径，不依赖 Windows 窗口截图。
+
+二、提取与 UI/最终合成有实际原生调用关系
+HGRenderPathScene.RenderPostProcessPhase2 和 HGRenderPathUI.RenderInternal 的控制流中均找到 UIPassConstructor、ScreenSpaceOverlayPassConstructor 和以类型 3 调用 ProcessRTExtraction 的节点；这些调用在已检查的相应代码路径上位于 UI/叠加 Pass 构造之后。
+这支持以 FinalResult 作为完整菜单输出候选。RenderGraph 的实际 GPU 执行、输出相机、UI 遮罩/角色模型覆盖和后续叠加仍需运行时确认，不能仅按机器码地址顺序保证每一种分支的最终显示内容。
+
+三、不能只接一个托管回调
+还确认存在 ExecuteRenderRequestCPP、ExecuteSimpleUIRenderRequestCPP，以及对应 HGRenderGraphCPP 原生入口。
+ExecuteRenderRequestCPP 的已检查片段会对 0、1、2、3 四种提取类型调用 GetRTForExtractionCPP；SimpleUI 函数调用 HGRenderPathSimpleUI_Create/Render 的引擎内部入口。SimpleUI 是否也完整处理 FinalResult，单靠这个包装函数尚不能确认。
+RTExtractionDone 的文件实现包含动态分发检查和无分发时直接返回的路径；文件中的方法体不能代表运行时所有热更新行为，也不能作为 GPU 已完成写入的证明。
+0.6.2 内保留的 NativeMenuCapture 仍依赖 GetScreenCapture + RTExtractionDone 对同一目标的通知，并在最后 ReadPixels 回到 CPU。它不是已经可用的 GPU 直通实现。此前“请求了却没有完成”的原因仍需实际路径验证，不能据本次文件审查断言唯一根因。
+
+四、GPU 接入存在基础，但交接尚未验证
+UnityPlayer 中找到 Vulkan 加载、提交及图像复制相关符号字符串，以及原生插件加载与 CommandBuffer::IssuePluginEventAndDataInternal 字符串。
+游戏元数据中保留 GL.IssuePluginEvent、CommandBuffer.GetNativePtr、CopyTexture、图形 fence、RenderUIOverlay、HGDrawUIRendererList。此次 CommandBuffer 声明中没有 IssuePluginEventAndData 托管入口；UnityPlayer 的字符串存在不证明 EML 可直接调用它。
+EML 当前公开宿主接口支持解析/调用托管方法和 hook，但没有直接提供 IUnityGraphicsVulkan。检查的模块加载代码使用 LoadLibraryEx + BetterEndfield_GetThirdPartyModuleV1，不能等同于由 Unity 正规插件加载器传入 IUnityInterfaces。
+现有 XrVulkanBackend 有接受外部游戏设备和图像的接口框架；当前交付的兼容路径仍另建 Vulkan 设备，采用 CPU 回读和上传。需要验证游戏设备是否满足 OpenXR 要求、队列同步与图像生命周期，或者验证可用的跨设备共享。
+boot.config 开启图形任务/原生图形任务，不能在任意主线程回调中直接操作游戏 Vulkan 队列。
+扫描的 Plugins 下未发现 OpenXR/OpenVR 命名的插件 DLL；ScriptingAssemblies 有 UnityEngine.XRModule。这不构成“已有现成 VR 管线”的证据，也不证明不存在其他打包方式。
+
+五、透明 HUD 难于完整菜单
+GPUIExtendedSystem 具有实例缓冲、动态图集、文本系统和 _RenderNodes；GPUIProxySyncManager 有 FlushBeforeRender。UI 还存在 HGDrawUIRendererList、模糊和屏幕叠加 Pass。
+HGUtils 的 s_uiCameraRT 与 GetOrCreateUICameraClearRT 名称不足以证明它就是最终透明 HUD。不能直接把任意 UI 相机纹理当作包含小地图、轮盘和所有按钮的完整透明层。
+应在明确 UI 绘制阶段、alpha 与依赖背景后再做单独 HUD 输出，避免重新绑定整个原生 Canvas 树导致布局/模型异常。
+
+预计可达到的程度（工程判断，非验收结果）
+A. 完整菜单、角色/装备预览、动画、普通手柄原样显示在头部固定面板：有较强基础，应优先实现。预览模型在面板中是平面画面。
+B. 不依赖 WGC，直接从游戏 FinalResult 取图：有明确接口和原生调用证据；仍需确认实际相机、托管/CPP/SimpleUI 分支及写入完成时机。
+C. 去掉 CPU 回读，游戏 GPU 纹理直接复制/合成到 OpenXR：条件性可行，是第二个独立里程碑。不能承诺共用设备、零拷贝或立刻提速。
+D. 完整透明小地图/技能/轮盘 HUD：有 UI Pass 接入线索，难度高于 A/B；覆盖率未确认。
+E. 角色菜单中的角色变为真正立体：当前单张 FinalResult 路径不具备，需要单独双眼渲染角色预览相机。
+F. 全程双眼玩法、剧情第一人称、90/120 FPS 和最高分辨率：本次文件扫描无法给出达标保证。单眼最终画面复制给双眼不等于立体世界；A770 的实际耗时仍需测量。
+
+建议实施顺序
+1. 用实际运行相机和 RTExtractionType.FinalResult 验证内部输出，覆盖角色、装备、Watch/ESC、对话和返回玩法；分别记录 CPP、托管、SimpleUI 分支及目标写入。
+2. 确认纹理内容和 GPU 完成点后，接入 OpenXR 的 GPU 传递。保留完整菜单原生交互与头部固定显示。
+3. 完整菜单稳定后，再拆透明 HUD 与优化双眼世界。
+不应把“函数能解析”“回调有计数”或“纹理非空”单独当作完成验收；需确认画面持续更新、页面切换正确、角色/文字/按钮齐全、可返回玩法。
+
+证据文件
+scan.json：文件摘要、类型/方法声明、映射地址和二进制符号线索。
+render-declarations.txt：便于检索的渲染声明。
+control-flow.asm.txt / control-flow.json：GetScreenCapture、RTExtractionDone、场景与 UI 路径的有界控制流。
+native-candidates.asm.txt / native-calls.json：补充候选函数反汇编；部分为片段，不代表完整函数。
+extraction-enums.json：提取阶段/持续方式的压缩常量解码结果。

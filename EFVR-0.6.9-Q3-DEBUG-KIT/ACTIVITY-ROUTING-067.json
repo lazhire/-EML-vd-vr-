@@ -1,0 +1,835 @@
+{
+  "source": "local host.log, last 100 UI transitions",
+  "cases": [
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "WalletBar",
+          "world": false
+        },
+        {
+          "name": "Map",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "WalletBar",
+          "world": false
+        },
+        {
+          "name": "Map",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "MapInfoPopup",
+          "world": false
+        },
+        {
+          "name": "WalletBar",
+          "world": false
+        },
+        {
+          "name": "Map",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "WalletBar",
+          "world": false
+        },
+        {
+          "name": "Map",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "MapInfoPopup",
+          "world": false
+        },
+        {
+          "name": "WalletBar",
+          "world": false
+        },
+        {
+          "name": "Map",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "WalletBar",
+          "world": false
+        },
+        {
+          "name": "Map",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "Map",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "Map",
+          "world": false
+        },
+        {
+          "name": "WalletBar",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "Map",
+          "world": false
+        },
+        {
+          "name": "WalletBar",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "ShopChoicenessBattlePass",
+          "world": false
+        },
+        {
+          "name": "ShopRecommend",
+          "world": false
+        },
+        {
+          "name": "CashShop",
+          "world": false
+        },
+        {
+          "name": "WalletBar",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "transition",
+      "panels": [
+        {
+          "name": "ShopChoicenessBattlePass",
+          "world": false
+        },
+        {
+          "name": "ShopRecommend",
+          "world": false
+        },
+        {
+          "name": "CashShop",
+          "world": false
+        },
+        {
+          "name": "WatchBlur",
+          "world": false
+        },
+        {
+          "name": "WalletBar",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "transition",
+      "panels": [
+        {
+          "name": "ShopChoicenessBattlePass",
+          "world": false
+        },
+        {
+          "name": "ShopRecommend",
+          "world": false
+        },
+        {
+          "name": "CashShop",
+          "world": false
+        },
+        {
+          "name": "WatchBlur",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "DomainMain",
+          "world": false
+        },
+        {
+          "name": "WalletBar",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "DomainMain",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "ActivityPushPopup",
+          "world": false
+        },
+        {
+          "name": "ActivityCharSignCommon",
+          "world": false
+        },
+        {
+          "name": "ActivityCenter",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "gameplay",
+      "panels": [
+        {
+          "name": "ActivityCharSignCommon",
+          "world": false
+        },
+        {
+          "name": "ActivityCenter",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "transition",
+      "panels": [
+        {
+          "name": "ActivityCharSignCommon",
+          "world": false
+        },
+        {
+          "name": "ActivityCenter",
+          "world": false
+        },
+        {
+          "name": "WatchBlur",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    },
+    {
+      "old_mode": "menu",
+      "panels": [
+        {
+          "name": "ActivityCenterEmptyBottom",
+          "world": false
+        },
+        {
+          "name": "WatchBlur",
+          "world": false
+        },
+        {
+          "name": "WatchController",
+          "world": false
+        },
+        {
+          "name": "Watch",
+          "world": false
+        },
+        {
+          "name": "ControllerHint",
+          "world": false
+        },
+        {
+          "name": "ControllerNaviTarget",
+          "world": false
+        },
+        {
+          "name": "BattleBottomScreenEffect",
+          "world": false
+        },
+        {
+          "name": "UIDPanel",
+          "world": false
+        },
+        {
+          "name": "FullScreenSceneBlur",
+          "world": true
+        },
+        {
+          "name": "MouseIconHint",
+          "world": false
+        },
+        {
+          "name": "CommonDrag",
+          "world": false
+        },
+        {
+          "name": "Touch",
+          "world": false
+        }
+      ]
+    }
+  ]
+}

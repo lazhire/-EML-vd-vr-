@@ -1,0 +1,38 @@
+{
+  "RTExtractionType": {
+    "SceneColorLS": {
+      "compressed_byte": 0,
+      "value": 0
+    },
+    "BlurredSceneColorPS": {
+      "compressed_byte": 2,
+      "value": 1
+    },
+    "SceneColorPS": {
+      "compressed_byte": 4,
+      "value": 2
+    },
+    "FinalResult": {
+      "compressed_byte": 6,
+      "value": 3
+    },
+    "Count": {
+      "compressed_byte": 8,
+      "value": 4
+    }
+  },
+  "RTExtractionDuration": {
+    "Persistent": {
+      "compressed_byte": 0,
+      "value": 0
+    },
+    "Temporal": {
+      "compressed_byte": 2,
+      "value": 1
+    },
+    "Count": {
+      "compressed_byte": 4,
+      "value": 2
+    }
+  }
+}
